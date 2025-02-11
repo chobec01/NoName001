@@ -5,16 +5,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float playerSpeed = 10;
-    private bool 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool facingRight;
+    public float jumpPower = 10;
+    private float moveX;
 
     // Update is called once per frame
     void Update()
     {
-        
+        moveX = Input.GetAxis("Horizontal");
+        gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveX * playerSpeed, gameObject.GetComponent<Rigidbody2D>().velocity.y);
     }
 }
