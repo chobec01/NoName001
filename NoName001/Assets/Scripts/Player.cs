@@ -7,7 +7,7 @@ public class Player : MonoBehaviour
     public float playerSpeed = 1f;
     Rigidbody2D rb2D;
     public int maxHealth = 10;
-    int currentHealth = 1;
+    int currentHealth;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        currentHealth = maxHealth;
     }
     private void FixedUpdate()
     {
