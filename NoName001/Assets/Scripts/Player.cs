@@ -8,18 +8,28 @@ public class Player : MonoBehaviour
     Rigidbody2D rb2D;
     public int maxHealth = 10;
     int currentHealth;
+    /*public float timeInvincible = 1.0f;
+    bool isInvincible;
+    float dmgCD;*/
 
     // Start is called before the first frame update
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
-        //currentHealth = maxHealth;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentHealth = maxHealth;
+        /*if (isInvincible)
+        {
+            dmgCD -= Time.deltaTime;
+            if(dmgCD < 0)
+            {
+                isInvincible = false;
+            }
+        }*/
     }
     private void FixedUpdate()
     {
@@ -30,6 +40,15 @@ public class Player : MonoBehaviour
     }
     public void ChangeHealth(int amount)
     {
+        /*if(amount < 0 || amount > 0)
+        {
+            if(isInvincible)
+            {
+                return;
+            }
+            isInvincible = true;
+            dmgCD = timeInvincible;
+        }*/
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     }
