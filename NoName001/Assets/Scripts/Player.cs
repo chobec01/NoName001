@@ -12,14 +12,12 @@ public class Player : MonoBehaviour
     bool isInvincible;
     float dmgCD;*/
 
-    // Start is called before the first frame update
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
         /*if (isInvincible)
@@ -50,7 +48,7 @@ public class Player : MonoBehaviour
             dmgCD = timeInvincible;
         }*/
         currentHealth = Mathf.Clamp(currentHealth + amount, 0, maxHealth);
-        Debug.Log(currentHealth + "/" + maxHealth);
+        UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
     }
     public int getHealth { get { return currentHealth; } }
 }
