@@ -25,6 +25,7 @@ public class Enemy : MonoBehaviour
         {
             direction = -direction;
             timer = changeTime;
+            vertical = Random.value > 0.5f;
         }
     }
 
@@ -48,6 +49,10 @@ public class Enemy : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+        }
+        if (collision.gameObject.name == "Ground")
+        {
+            direction = -direction;
         }
     }
 }
