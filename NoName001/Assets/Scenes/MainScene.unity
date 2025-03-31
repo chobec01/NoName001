@@ -4533,14 +4533,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5648846516660882091, guid: 056009fd3c8dedf43bd561bf7c8c677c, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7137780052787067616, guid: 056009fd3c8dedf43bd561bf7c8c677c, type: 3}
-      propertyPath: m_SleepingMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8215474733030859545, guid: 056009fd3c8dedf43bd561bf7c8c677c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.51
@@ -4714,9 +4706,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 529712799}
   - {fileID: 3531413557945611586}
+  - {fileID: 7525808469892249345}
   - {fileID: 5345919347082052678}
   - {fileID: 1339072773871440879}
   - {fileID: 2488419219200094368}
   - {fileID: 1796868240}
   - {fileID: 1326934342}
-  - {fileID: 7525808469892249345}
