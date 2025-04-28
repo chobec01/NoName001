@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public bool vertical;
     float timer;
     int direction = 1;
+    bool broken = true;
     Rigidbody2D rbEnemy;
     Animator animator;
     // Start is called before the first frame update
@@ -34,6 +35,10 @@ public class Enemy : MonoBehaviour
     private void FixedUpdate()
     {
         Vector2 position = rbEnemy.position;
+        if(!broken)
+        {
+            return;
+        }
         if(vertical)
         {
             position.y = position.y + speedEnemy * Time.deltaTime * direction;
@@ -60,5 +65,11 @@ public class Enemy : MonoBehaviour
         {
             direction = -direction;
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rbEnemy.simulated = false;
     }
 }

@@ -5,8 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float playerSpeed = 1f;
-    Rigidbody2D rb2D;
     public int maxHealth = 10;
+    public int getHealth { get { return currentHealth; } }
+    public GameObject projectilePrefab;
+    Rigidbody2D rbPlayer;
     int currentHealth;
     Animator animator;
     Vector2 moveDirection = new Vector2 (1, 0);
@@ -16,7 +18,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        rb2D = GetComponent<Rigidbody2D>();
+        rbPlayer = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         animator = GetComponent<Animator>();
     }
@@ -31,6 +33,10 @@ public class Player : MonoBehaviour
                 isInvincible = false;
             }
         }*/
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Launch();
+        }
     }
     private void FixedUpdate()
     {
@@ -45,7 +51,7 @@ public class Player : MonoBehaviour
         animator.SetFloat("Move Y", moveDirection.y);
         animator.SetFloat("Speed", moveDirection.magnitude);
         Vector2 movement = new Vector2(x, y) * playerSpeed * Time.deltaTime;
-        rb2D.MovePosition(rb2D.position + movement);
+        rbPlayer.MovePosition(rbPlayer.position + movement);
     }
     public void ChangeHealth(int amount)
     {
@@ -62,5 +68,12 @@ public class Player : MonoBehaviour
         UIHandler.instance.SetHealthValue(currentHealth / (float)maxHealth);
         animator.SetTrigger("Hit");
     }
-    public int getHealth { get { return currentHealth; } }
+
+    void Launch()
+    {
+        GameObject projectileObject = Instantiate(projectilePrefab, rbPlayer.position, Quaternion.identity);
+        Projectile projectile = projectileObject.GetComponent<Projectile>( );
+        projectile.Launch(moveDirection,150);
+        animator.SetTrigger("Launch");
+    }
 }
