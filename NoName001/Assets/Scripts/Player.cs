@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour
 {
@@ -36,6 +37,10 @@ public class Player : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             Launch();
+        }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            FindFriend();
         }
     }
     private void FixedUpdate()
@@ -75,5 +80,14 @@ public class Player : MonoBehaviour
         Projectile projectile = projectileObject.GetComponent<Projectile>( );
         projectile.Launch(moveDirection,150);
         animator.SetTrigger("Launch");
+    }
+
+    void FindFriend()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(rbPlayer.position, moveDirection, 1.5f, LayerMask.GetMask("NPC"));
+        if(hit.collider != null)
+        {
+            Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
+        }
     }
 }

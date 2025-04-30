@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/dungeonui.v2.png?fileID=-1471782391&amp;guid=925180708be078f48af2589f53604a20&amp;type=3#UIDialogue&quot;); -unity-background-scale-mode: stretch-to-fill;">
+        <ui:Label tabindex="-1" text="Hello Adventure!!" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 100%; height: 100%; padding-top: 41px; padding-right: 38px; padding-bottom: 50px; padding-left: 34px; -unity-font-definition: initial; -unity-font: url(&quot;project://database/Assets/Art/LowresPixel-Regular.otf?fileID=12800000&amp;guid=e64adeced75fe7e44988915c55ad3405&amp;type=3#LowresPixel-Regular&quot;); -unity-font-style: bold; white-space: normal; text-overflow: clip; font-size: 20px; -unity-background-scale-mode: stretch-to-fill;" />
+    </ui:VisualElement>
+</ui:UXML>

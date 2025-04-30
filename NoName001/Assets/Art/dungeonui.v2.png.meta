@@ -2406,6 +2406,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: UIDialogue
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 247
+        width: 112
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b636b0da280481941a52d3cf1866f7b8
+      internalID: -1471782391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -2417,6 +2438,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      UIDialogue: -1471782391
       dungeonui.v2_0: 318305737
       dungeonui.v2_1: -47322672
       dungeonui.v2_10: 231570483

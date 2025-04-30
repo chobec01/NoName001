@@ -10,10 +10,12 @@ public class Projectile : MonoBehaviour
     {
         rbProjectile = GetComponent<Rigidbody2D>();
     }
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        if(transform.position.magnitude > 10.0f)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void Launch(Vector2 direction, float force)
@@ -28,7 +30,6 @@ public class Projectile : MonoBehaviour
         {
             enemy.Fix();
         }
-        Debug.Log("Projectile collision with " + collision.gameObject);
         Destroy(gameObject);
     }
 
